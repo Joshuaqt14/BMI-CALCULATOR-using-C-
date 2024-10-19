@@ -1,0 +1,48 @@
+using System;
+
+namespace IncognitoGwapo_BMI_Calculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("BMI CALCULATOR");
+
+            Console.Write("\n" + "Input Your weight In kg: ");
+            double weight = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("\n" + "Input Your height In m: ");
+            double height = Convert.ToDouble(Console.ReadLine());
+
+            double bmi = weight / (height * height);
+
+            Console.WriteLine("\n" + $"Your BMI: {bmi:F2}");
+
+            if (bmi < 18.5)
+            {
+                Console.WriteLine("\n" + "Category: You are underweight");
+            }
+
+            else if (bmi >= 18.5 && bmi <= 24.9)
+            {
+                Console.WriteLine("\n" + "Category: You are healthy weight range");
+            }
+
+            else if (bmi >= 25 && bmi <= 29.9)
+            {
+                Console.WriteLine("\n" + "Category: You are overweight");
+            }
+
+            else if (bmi > 29.9)
+            {
+                Console.WriteLine("\n" + "Category: You are obese");
+            }
+
+            else
+            {
+                Console.WriteLine("\n" + "ERROR: No whole number zero '0' is allowed in both weight and height");
+            }
+            Console.ReadKey();
+        }
+    }
+}
